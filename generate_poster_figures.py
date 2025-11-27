@@ -15,12 +15,12 @@ def set_poster_style():
     """Set matplotlib style for poster figures"""
     plt.rcParams['font.family'] = 'sans-serif'
     plt.rcParams['font.sans-serif'] = ['Arial', 'DejaVu Sans', 'Helvetica']
-    plt.rcParams['font.size'] = 14
-    plt.rcParams['axes.labelsize'] = 18
-    plt.rcParams['axes.titlesize'] = 18
-    plt.rcParams['xtick.labelsize'] = 14
-    plt.rcParams['ytick.labelsize'] = 14
-    plt.rcParams['legend.fontsize'] = 14
+    plt.rcParams['font.size'] = 12
+    plt.rcParams['axes.labelsize'] = 14
+    plt.rcParams['axes.titlesize'] = 16
+    plt.rcParams['xtick.labelsize'] = 12
+    plt.rcParams['ytick.labelsize'] = 12
+    plt.rcParams['legend.fontsize'] = 12
     plt.rcParams['figure.dpi'] = 300
     plt.rcParams['savefig.dpi'] = 300
     plt.rcParams['savefig.bbox'] = 'tight'
@@ -58,9 +58,9 @@ def generate_dose_response_curve(df, output_dir, dose_column='dose'):
     # Create figure
     fig, ax = plt.subplots(figsize=(8, 4.5))
     
-    # Define colors - muted, publication-style
-    scatter_color = '#7FA6C9'  # Light desaturated blue
-    line_color = '#1F4788'      # Dark blue
+    # Define colors - muted purple theme
+    scatter_color = '#B19CD9'  # Light purple
+    line_color = '#5B2C6F'      # Dark purple
     
     # Plot individual cells (scatter)
     ax.scatter(df_curve[dose_column], df_curve['green_percentage'],
@@ -74,12 +74,12 @@ def generate_dose_response_curve(df, output_dir, dose_column='dose'):
                capsize=5, capthick=1.5, elinewidth=1.5,
                label='Mean ± SEM', zorder=3)
     
-    # Axis labels (bold)
-    ax.set_xlabel('Nocodazole concentration (µM)', fontsize=18, fontweight='bold')
-    ax.set_ylabel('Microtubule content (% green pixels)', fontsize=18, fontweight='bold')
+    # Axis labels (bold, readable size)
+    ax.set_xlabel('Nocodazole concentration (µM)', fontsize=14, fontweight='bold')
+    ax.set_ylabel('Microtubule content (% green pixels)', fontsize=14, fontweight='bold')
     
     # Optional small title (can be removed if not needed)
-    ax.set_title('Nocodazole dose–response', fontsize=18, pad=15)
+    ax.set_title('Nocodazole dose–response', fontsize=16, pad=15)
     
     # Tick parameters
     ax.tick_params(axis='both', which='major', labelsize=14,
@@ -92,7 +92,7 @@ def generate_dose_response_curve(df, output_dir, dose_column='dose'):
         ax.spines[spine].set_visible(False)
     
     # Legend
-    ax.legend(loc='upper right', frameon=False, fontsize=14)
+    ax.legend(loc='upper right', frameon=False, fontsize=12)
     
     # No grid (clean look)
     ax.grid(False)
@@ -155,8 +155,8 @@ def generate_bar_plot(df, output_dir, dose_column='dose'):
     # Create figure
     fig, ax = plt.subplots(figsize=(8, 4.5))
     
-    # Define color - muted blue/grey
-    bar_color = '#5B8DBE'  # Medium blue
+    # Define color - muted purple
+    bar_color = '#8B6FA8'  # Medium purple
     
     # Create bar positions
     x_pos = np.arange(len(dose_stats))
@@ -169,12 +169,12 @@ def generate_bar_plot(df, output_dir, dose_column='dose'):
                   capsize=5, error_kw={'elinewidth': 1.5, 'capthick': 1.5},
                   zorder=3)
     
-    # Axis labels (bold)
-    ax.set_xlabel('Nocodazole concentration (µM)', fontsize=18, fontweight='bold')
-    ax.set_ylabel('Microtubule content (% green pixels)', fontsize=18, fontweight='bold')
+    # Axis labels (bold, readable size)
+    ax.set_xlabel('Nocodazole concentration (µM)', fontsize=14, fontweight='bold')
+    ax.set_ylabel('Microtubule content (% green pixels)', fontsize=14, fontweight='bold')
     
     # Optional small title
-    ax.set_title('Microtubule content by dose', fontsize=18, pad=15)
+    ax.set_title('Microtubule content by dose', fontsize=16, pad=15)
     
     # X-axis tick labels
     x_labels = [f'{int(d)} µM' if d > 0 else 'Untreated' for d in dose_stats[dose_column]]
@@ -182,7 +182,7 @@ def generate_bar_plot(df, output_dir, dose_column='dose'):
     ax.set_xticklabels(x_labels, rotation=45, ha='right')
     
     # Tick parameters
-    ax.tick_params(axis='both', which='major', labelsize=14,
+    ax.tick_params(axis='both', which='major', labelsize=12,
                   length=6, width=1.5, direction='out')
     
     # Spine styling
