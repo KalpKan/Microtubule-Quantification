@@ -65,3 +65,13 @@ Temporary Items
 
 # GitHub setup files (helper files not needed in public repo)
 .github_setup/
+GITHUB_PUSH_INSTRUCTIONS.md
+PUSH_SUMMARY.txt
+metadata_template.csv
+push_to_github.sh
+show_filenames.py
+push_final.sh
+push_updates.sh
+STATISTICS_README.txt
+PROJECT_SUMMARY.txt
+REPOSITORY_DESCRIPTION.txt
