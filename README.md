@@ -129,6 +129,21 @@ This will output:
 - Publication-ready figure captions
 - Quick reference statistics for figure legends
 
+### 5. Generate Poster-Quality Figures
+
+Create high-resolution, professionally styled figures for posters and presentations:
+
+```bash
+python generate_poster_figures.py --results Results/quantification_results.csv
+```
+
+This generates:
+- Publication-quality dose-response curve (PNG + PDF)
+- Professional bar plot (PNG + PDF)
+- 300 DPI resolution for printing
+- Clean, poster-appropriate styling
+- Vector PDF format for scalability
+
 ## Output Files
 
 The analysis generates several files for each cell:
