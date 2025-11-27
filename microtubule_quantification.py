@@ -201,9 +201,13 @@ class MicrotubuleQuantifier:
                             output_dir: Path, threshold_value: float):
         """Save detailed visualizations of processing steps"""
         
+        # Calculate percentage for display
+        green_percentage = self.quantify_green_percentage(mask)
+        
         # Create figure with processing steps
         fig, axes = plt.subplots(2, 3, figsize=(15, 10))
-        fig.suptitle(f'Microtubule Analysis: {image_name}', fontsize=16)
+        fig.suptitle(f'Microtubule Analysis: {image_name} | Green: {green_percentage:.2f}%', 
+                    fontsize=16, fontweight='bold')
         
         # Original image
         axes[0, 0].imshow(cv2.cvtColor(original, cv2.COLOR_BGR2RGB))

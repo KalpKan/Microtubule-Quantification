@@ -62,3 +62,6 @@ Temporary Items
 # Results/*_mask.png
 # Results/*_overlay.png
 # Results/*_analysis.png
+
+# GitHub setup files (helper files not needed in public repo)
+.github_setup/

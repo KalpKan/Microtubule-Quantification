@@ -9,7 +9,7 @@ import sys
 
 # Configuration - edit these paths if needed
 INPUT_DIR = "/Users/kalp/Desktop/Organized Cropped Cells"
-OUTPUT_DIR = "/Users/kalp/Desktop/Results"
+OUTPUT_DIR = "/Users/kalp/Desktop/Results_New"
 METADATA_FILE = "metadata.csv"
 
 print("="*60)
