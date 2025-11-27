@@ -1,0 +1,13 @@
+image_name,condition,dose
+cell1_control,control,0
+cell2_control,control,0
+cell3_control,control,0
+cell1_dose1,low,0.1
+cell2_dose1,low,0.1
+cell3_dose1,low,0.1
+cell1_dose2,medium,0.5
+cell2_dose2,medium,0.5
+cell3_dose2,medium,0.5
+cell1_dose3,high,1.0
+cell2_dose3,high,1.0
+cell3_dose3,high,1.0
