@@ -112,6 +112,23 @@ python microtubule_quantification.py \
   --metadata metadata.csv
 ```
 
+### 4. Generate Statistics for Figure Captions
+
+After running the analysis, generate comprehensive statistics for publication:
+
+```bash
+python generate_statistics.py --results Results/quantification_results.csv
+```
+
+This will output:
+- Detailed statistics for each dose (mean ± SEM, SD, CV, range)
+- ANOVA results comparing all doses
+- Correlation analysis (Pearson and Spearman)
+- Linear regression statistics
+- Pairwise t-tests
+- Publication-ready figure captions
+- Quick reference statistics for figure legends
+
 ## Output Files
 
 The analysis generates several files for each cell:
