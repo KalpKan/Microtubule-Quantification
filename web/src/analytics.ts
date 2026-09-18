@@ -30,5 +30,6 @@ export function initAnalytics(key: string | undefined = import.meta.env.VITE_PUB
 
 export function capture(event: "sample_loaded" | "image_analyzed", props: Record<string, string | number>): void {
   if (!initialised) return;
-  posthog.capture(event, props);
+  // Per docs/analytics.md: instant + sendBeacon so an event is not lost with the page.
+  posthog.capture(event, props, { send_instantly: true, transport: "sendBeacon" });
 }
