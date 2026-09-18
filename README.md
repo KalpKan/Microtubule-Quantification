@@ -5,6 +5,8 @@
 
 An automated image analysis pipeline for quantifying microtubule content in fluorescent microscopy images. Designed for drug screening and dose-response analysis.
 
+**Try it in your browser: https://microtubules.kalpkan.com** — the same measurement, on one image at a time, with nothing uploaded (the [`web/`](web/) folder; it matches this Python pipeline exactly on the sample cells, see [web/README.md](web/README.md#accuracy)).
+
 ![Example Analysis](Results/P1_W1_C1_analysis.png)
 
 ## 🎯 What Does This Tool Do?
@@ -48,8 +50,8 @@ pip install -r requirements.txt
 # 1. Test on one cell
 python test_single_cell.py path/to/cell.png
 
-# 2. Run batch analysis (edit run_analysis.py first to set paths)
-python run_analysis.py
+# 2. Run batch analysis on a folder of cropped cells
+python run_analysis.py --input "path/to/cropped cells" --output path/to/results
 
 # 3. Generate statistics
 python generate_statistics.py --results Results/quantification_results.csv
@@ -118,6 +120,38 @@ The tool automatically calculates:
 - **Linear regression**: R², slope, p-value
 - **t-tests**: Pairwise comparisons
 
+## 🧭 For non-developers: how to run this, deploy this, and where the settings live
+
+### How to run this (the Python analysis, on your computer)
+
+1. Install Python 3 (python.org) if you do not have it.
+2. Open a terminal in this folder and run, once:
+   ```bash
+   python3 -m venv .venv
+   .venv/bin/pip install -r requirements.txt
+   ```
+3. Put your cropped cell images (one cell per file) in a folder, and describe them in `metadata.csv` (one row per image, see "What You Need" above).
+4. Run the analysis, pointing it at your folder:
+   ```bash
+   .venv/bin/python run_analysis.py --input "path/to/cropped cells" --output results
+   ```
+   Results (CSV, masks, overlays, dose-response plots) appear in the `results` folder.
+5. To check the code still works after a change: `.venv/bin/python -m unittest tests/test_run_analysis.py -v`.
+
+### How to run this (the browser version)
+
+Open https://microtubules.kalpkan.com on a phone or a laptop, tap "Choose an image" or "Take a photo", or try one of the three samples. To run it on your own computer instead, see [web/README.md](web/README.md#how-to-run-this) (needs Node.js).
+
+### How to deploy this
+
+Only the browser version is deployed; the Python scripts run locally. The web page is on Vercel (free plan, $0) as project `microtubules`, root directory `web`, and redeploys itself whenever `main` is pushed to GitHub. Manual deploy and the health check are described in [web/README.md](web/README.md#how-to-deploy-this).
+
+### Where the settings live
+
+- Python scripts: there are no settings files; every option is a command-line flag (`--input`, `--output`, `--metadata`), with the old Desktop folders as defaults in `run_analysis.py`.
+- Browser version: one optional, non-secret environment variable, `VITE_PUBLIC_POSTHOG_KEY` (anonymous usage analytics), kept in the Vercel dashboard for project `microtubules`. Names are listed in `web/.env.example`; there are no secrets anywhere in this repository.
+- Domain `microtubules.kalpkan.com`: a DNS record in Cloudflare pointing at the Vercel project (recorded in Kalp's portfolio repo).
+
 ## 📖 Documentation
 
 - **[USAGE_GUIDE.md](USAGE_GUIDE.md)** - Detailed step-by-step instructions
@@ -131,7 +165,7 @@ The tool automatically calculates:
 |--------|---------|
 | `microtubule_quantification.py` | Main analysis pipeline (batch processing) |
 | `test_single_cell.py` | Test on one cell before batch processing |
-| `run_analysis.py` | Easy wrapper script (edit paths and run) |
+| `run_analysis.py` | Easy wrapper script: `python run_analysis.py --input <cells folder> --output <results folder> [--metadata metadata.csv]` (no flags = the original default folders) |
 | `generate_statistics.py` | Comprehensive statistical analysis |
 | `generate_poster_figures.py` | Publication-quality figures (300 DPI) |
 
