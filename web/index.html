@@ -3,8 +3,97 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Measures how much of a fluorescent cell image is microtubule (green) outside the nucleus (blue), entirely in your browser."
+    />
+    <meta name="theme-color" content="#0b1410" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <title>Microtubule Quantifier</title>
-    <script type="module" src="/src/main.ts"></script>
   </head>
-  <body></body>
+  <body>
+    <main class="app">
+      <header class="masthead">
+        <p class="eyebrow">Image analysis, in the browser</p>
+        <h1>Microtubule Quantifier</h1>
+        <p class="lede">
+          Upload a fluorescent cell image (green = microtubules, blue = nucleus) and get the percentage of the
+          image occupied by microtubules, using the same OpenCV steps as the
+          <a href="https://github.com/KalpKan/Microtubule-Quantification">Python pipeline</a>. Nothing is uploaded:
+          the picture never leaves your device.
+        </p>
+      </header>
+
+      <section class="controls" aria-labelledby="controls-heading">
+        <h2 id="controls-heading" class="visually-hidden">Choose an image</h2>
+        <div class="buttons">
+          <label class="button primary">
+            <input id="file-input" type="file" accept="image/*" />
+            Choose an image
+          </label>
+          <label class="button">
+            <input id="camera-input" type="file" accept="image/*" capture="environment" />
+            Take a photo
+          </label>
+        </div>
+        <p class="samples-label">Or try a sample cell from the paper:</p>
+        <div class="buttons samples" id="samples">
+          <button type="button" class="button sample" data-sample="P1_W1_C1">Untreated</button>
+          <button type="button" class="button sample" data-sample="P3_W2_C3">Nocodazole 25 µM</button>
+          <button type="button" class="button sample" data-sample="P1_W3_C1">Taxol control</button>
+        </div>
+        <p id="status" class="status" role="status" aria-live="polite">Loading OpenCV...</p>
+      </section>
+
+      <section class="results" id="results" hidden aria-labelledby="results-heading">
+        <h2 id="results-heading" class="visually-hidden">Result</h2>
+        <div class="readout">
+          <p class="percent"><span id="percent">0.00</span><span class="unit">%</span></p>
+          <p class="readout-label">of the image is microtubule</p>
+          <dl class="details">
+            <div><dt>Image</dt><dd id="dims">0 × 0 px</dd></div>
+            <div><dt>Otsu threshold</dt><dd id="threshold">0</dd></div>
+            <div><dt>Microtubule pixels</dt><dd id="pixels">0 / 0</dd></div>
+            <div><dt>Time</dt><dd id="elapsed">0 ms</dd></div>
+          </dl>
+        </div>
+        <div class="panels">
+          <figure>
+            <canvas id="input-canvas" width="1" height="1"></canvas>
+            <figcaption>Input</figcaption>
+          </figure>
+          <figure>
+            <canvas id="overlay-canvas" width="1" height="1"></canvas>
+            <figcaption>Detected microtubules (green), nucleus excluded</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="how" aria-labelledby="how-heading">
+        <h2 id="how-heading">How the number is computed</h2>
+        <ol>
+          <li>Take the green channel of the image.</li>
+          <li>Find the nucleus: Otsu threshold on the blue channel, then close small gaps (5 px ellipse, twice).</li>
+          <li>Find microtubules: Otsu threshold on the green channel.</li>
+          <li>Remove the nucleus from the microtubule mask.</li>
+          <li>Clean up: open then close with a 3 px ellipse.</li>
+          <li>Percentage = microtubule pixels ÷ all pixels × 100.</li>
+        </ol>
+        <p>
+          On the three sample cells the browser result equals the Python script's result to four decimal places
+          (see the <a href="https://github.com/KalpKan/Microtubule-Quantification/tree/main/web#accuracy">accuracy table</a>).
+        </p>
+      </section>
+
+      <footer class="footer">
+        <p>
+          Part of <a href="https://kalpkan.com">kalpkan.com</a> ·
+          <a href="https://github.com/KalpKan/Microtubule-Quantification">Source (MIT)</a> · Runs on
+          <a href="https://docs.opencv.org/4.x/d5/d10/tutorial_js_root.html">OpenCV.js</a>, served from this site, so it
+          works offline once loaded. Anonymous, cookieless usage analytics only; images are never sent anywhere.
+        </p>
+      </footer>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>
