@@ -137,6 +137,7 @@ The tool automatically calculates:
    ```
    Results (CSV, masks, overlays, dose-response plots) appear in the `results` folder.
 5. To check the code still works after a change: `.venv/bin/python -m unittest tests/test_run_analysis.py -v`.
+6. The original cropped cells and whole-well images used in the paper are in `tests/fixtures/` with the number the pipeline gives for each one in `tests/fixtures/ground_truth.json` (rebuild or re-check with `.venv/bin/python tests/fixtures/make_fixtures.py [--check]`). Three cells (`P3_W1_C2`, `P3_W1_C3`, `P3_W3_C3`) were re-cropped after `Results/quantification_results.csv` was written, so their current numbers differ from that CSV; the fixtures are the reference.
 
 ### How to run this (the browser version)
 

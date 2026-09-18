@@ -83,3 +83,6 @@ REPOSITORY_DESCRIPTION.txt
 .vercel
 .env.local
 .env*.local
+
+# large generated fixtures (regenerate with tests/fixtures/make_fixtures.py)
+tests/fixtures/edge/generated-large/

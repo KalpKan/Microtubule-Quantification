@@ -1,0 +1,697 @@
+{
+  "_about": "percent/threshold/counts come from microtubule_quantification.MicrotubuleQuantifier (the steps process_image executes) on the file as cv2.imread loads it. Browser must be within 1 percentage point of percent for every image entry; JPEG/WebP-lossy entries allow decoder differences inside that same 1 point. Non-image entries record the expected refusal.",
+  "images": {
+    "cells/P1_W1_C1.PNG": {
+      "percent": 24.832064487236902,
+      "threshold": 36,
+      "green_pixels": 1109,
+      "total_pixels": 4466,
+      "width": 77,
+      "height": 58,
+      "bytes": 8420,
+      "sha256": "02838893df0abab27a5cb682a1df61a43c0e172fea98bd50e99a54a5c63b7f15",
+      "committed": true
+    },
+    "cells/P1_W1_C2.PNG": {
+      "percent": 36.98924731182795,
+      "threshold": 28,
+      "green_pixels": 4988,
+      "total_pixels": 13485,
+      "width": 87,
+      "height": 155,
+      "bytes": 19880,
+      "sha256": "04a451d5ec050fb17f860e6fb8dce15ae4632d1828612d8d5252c109e1b93981",
+      "committed": true
+    },
+    "cells/P1_W1_C3.PNG": {
+      "percent": 21.95762711864407,
+      "threshold": 28,
+      "green_pixels": 2591,
+      "total_pixels": 11800,
+      "width": 100,
+      "height": 118,
+      "bytes": 15072,
+      "sha256": "59962faec5673203464af3d28f02431676eb270935d8f1d2b62c7aed9dd00916",
+      "committed": true
+    },
+    "cells/P1_W2_C1.PNG": {
+      "percent": 0.0,
+      "threshold": 54,
+      "green_pixels": 0,
+      "total_pixels": 5776,
+      "width": 76,
+      "height": 76,
+      "bytes": 10184,
+      "sha256": "8e433627cd5f11ca239f2b1b9dce18a6181573ee7c1b5a963e28979a370eca99",
+      "committed": true
+    },
+    "cells/P1_W2_C2.PNG": {
+      "percent": 0.0,
+      "threshold": 49,
+      "green_pixels": 0,
+      "total_pixels": 4260,
+      "width": 71,
+      "height": 60,
+      "bytes": 9114,
+      "sha256": "e3b859095b178a7b31e7cead266ad8497e65c3aced1260beabdbfb0b91ae181f",
+      "committed": true
+    },
+    "cells/P1_W2_C3.PNG": {
+      "percent": 0.0,
+      "threshold": 55,
+      "green_pixels": 0,
+      "total_pixels": 7313,
+      "width": 71,
+      "height": 103,
+      "bytes": 13291,
+      "sha256": "2787b150813597a8e2d0afb440cf456ecc57de77b3f691ae1eb6686d8d056ecd",
+      "committed": true
+    },
+    "cells/P1_W3_C1.PNG": {
+      "percent": 21.182728410513143,
+      "threshold": 62,
+      "green_pixels": 677,
+      "total_pixels": 3196,
+      "width": 68,
+      "height": 47,
+      "bytes": 7486,
+      "sha256": "6819b48f75e3211f7652db197ecf17fbfb395f167697e8012c72cde7b548bcd4",
+      "committed": true
+    },
+    "cells/P1_W3_C2.PNG": {
+      "percent": 30.546955624355004,
+      "threshold": 51,
+      "green_pixels": 592,
+      "total_pixels": 1938,
+      "width": 51,
+      "height": 38,
+      "bytes": 6324,
+      "sha256": "0430876c8f587280d1c3f7e390c190d09a17c8cdd0b5060f32ab1d3a31217492",
+      "committed": true
+    },
+    "cells/P1_W3_C3.PNG": {
+      "percent": 40.23957409050577,
+      "threshold": 46,
+      "green_pixels": 907,
+      "total_pixels": 2254,
+      "width": 46,
+      "height": 49,
+      "bytes": 7111,
+      "sha256": "d9a3cf6bc949f4d352f617ed84651883fa1581de80486ccd1542a0c9483125be",
+      "committed": true
+    },
+    "cells/P1_W4_C1.PNG": {
+      "percent": 40.03033645890789,
+      "threshold": 21,
+      "green_pixels": 2903,
+      "total_pixels": 7252,
+      "width": 74,
+      "height": 98,
+      "bytes": 14394,
+      "sha256": "3e82f6714763f972908f85133253b58f7cf6f87b37cf9de80d796f4f49c42ea0",
+      "committed": true
+    },
+    "cells/P1_W4_C2.PNG": {
+      "percent": 44.23234811165845,
+      "threshold": 14,
+      "green_pixels": 2155,
+      "total_pixels": 4872,
+      "width": 58,
+      "height": 84,
+      "bytes": 10693,
+      "sha256": "e8b8de932697d2e583584ec7a5a07aca97f7d91bd8536d4a3f26008a9a7b36bd",
+      "committed": true
+    },
+    "cells/P1_W4_C3.PNG": {
+      "percent": 32.773109243697476,
+      "threshold": 17,
+      "green_pixels": 1872,
+      "total_pixels": 5712,
+      "width": 68,
+      "height": 84,
+      "bytes": 10347,
+      "sha256": "8c905600a8593400a21995cf54f98748228e669bd22b0f113784548aed3e2709",
+      "committed": true
+    },
+    "cells/P2_W1_C1.PNG": {
+      "percent": 29.044117647058826,
+      "threshold": 16,
+      "green_pixels": 948,
+      "total_pixels": 3264,
+      "width": 68,
+      "height": 48,
+      "bytes": 7057,
+      "sha256": "9a774dd5d1bd00e11e028040ca299a924f648b953044a783df35ba65e4d33a57",
+      "committed": true
+    },
+    "cells/P2_W1_C2.PNG": {
+      "percent": 18.435462842242504,
+      "threshold": 24,
+      "green_pixels": 707,
+      "total_pixels": 3835,
+      "width": 59,
+      "height": 65,
+      "bytes": 7142,
+      "sha256": "713fb6f00a36b22870eafb1cf5bd35f01571a74da85d3451d7a36a533fee981a",
+      "committed": true
+    },
+    "cells/P2_W1_C3.PNG": {
+      "percent": 29.56081081081081,
+      "threshold": 24,
+      "green_pixels": 700,
+      "total_pixels": 2368,
+      "width": 37,
+      "height": 64,
+      "bytes": 6599,
+      "sha256": "6270e73d51dc9db14ba8c87f341316dd438b30b469b0c93fcea3dfe764717c21",
+      "committed": true
+    },
+    "cells/P2_W2_C1.PNG": {
+      "percent": 12.469635627530366,
+      "threshold": 46,
+      "green_pixels": 462,
+      "total_pixels": 3705,
+      "width": 65,
+      "height": 57,
+      "bytes": 7682,
+      "sha256": "d17eddddfc633d37dd6887e79f296f0fcd377ef0aa2afa3e36a4c886b8140d3b",
+      "committed": true
+    },
+    "cells/P2_W2_C2.PNG": {
+      "percent": 21.380597014925375,
+      "threshold": 25,
+      "green_pixels": 1146,
+      "total_pixels": 5360,
+      "width": 80,
+      "height": 67,
+      "bytes": 10034,
+      "sha256": "3b2daa9950e71dde1233e9fd255765b9fda7578091d3bc537998b748bb4ae0aa",
+      "committed": true
+    },
+    "cells/P2_W2_C3.PNG": {
+      "percent": 17.8125,
+      "threshold": 21,
+      "green_pixels": 285,
+      "total_pixels": 1600,
+      "width": 40,
+      "height": 40,
+      "bytes": 5971,
+      "sha256": "a9454dd7a9df552da01b7fd088e384ff77df466e4ae4b3d7c46c52c9a003ea1b",
+      "committed": true
+    },
+    "cells/P2_W3_C1.PNG": {
+      "percent": 21.21212121212121,
+      "threshold": 49,
+      "green_pixels": 273,
+      "total_pixels": 1287,
+      "width": 39,
+      "height": 33,
+      "bytes": 5389,
+      "sha256": "bb5f7ced9b8268fa3697ad4a9b6abfa1b6fadefc3030bcd2bde0f670e067d421",
+      "committed": true
+    },
+    "cells/P2_W3_C2.PNG": {
+      "percent": 21.744791666666664,
+      "threshold": 21,
+      "green_pixels": 1169,
+      "total_pixels": 5376,
+      "width": 56,
+      "height": 96,
+      "bytes": 9579,
+      "sha256": "efba13fcf3d4d6eda48f60c8ffdcead7cb563f5fa2389e9cbbcc851a7cfbf990",
+      "committed": true
+    },
+    "cells/P2_W3_C3.PNG": {
+      "percent": 19.23828125,
+      "threshold": 69,
+      "green_pixels": 197,
+      "total_pixels": 1024,
+      "width": 32,
+      "height": 32,
+      "bytes": 5099,
+      "sha256": "e4c48110db13e09121c85b52cd06a121be54bd505ffd747483bb53d9fcc6e428",
+      "committed": true
+    },
+    "cells/P2_W4_C1.PNG": {
+      "percent": 29.867724867724867,
+      "threshold": 32,
+      "green_pixels": 1129,
+      "total_pixels": 3780,
+      "width": 60,
+      "height": 63,
+      "bytes": 9487,
+      "sha256": "64438559ca4a99bf69ced6f44b59a1e7dd0199ad97fa43a63b21145b30a6c135",
+      "committed": true
+    },
+    "cells/P2_W4_C2.PNG": {
+      "percent": 24.895158215783454,
+      "threshold": 25,
+      "green_pixels": 653,
+      "total_pixels": 2623,
+      "width": 61,
+      "height": 43,
+      "bytes": 7247,
+      "sha256": "f936681b68ce2c464e696b129f4bbb69cbe555c0fb5d89a79e7d8322d266099e",
+      "committed": true
+    },
+    "cells/P2_W4_C3.PNG": {
+      "percent": 10.036876703543369,
+      "threshold": 33,
+      "green_pixels": 626,
+      "total_pixels": 6237,
+      "width": 99,
+      "height": 63,
+      "bytes": 9272,
+      "sha256": "c4a65fb4dc716be02cc8e7c79fe813ac0320ffbffa64fe18e609033384c1a9ea",
+      "committed": true
+    },
+    "cells/P3_W1_C1.PNG": {
+      "percent": 31.690140845070424,
+      "threshold": 31,
+      "green_pixels": 1305,
+      "total_pixels": 4118,
+      "width": 71,
+      "height": 58,
+      "bytes": 8832,
+      "sha256": "d1e802eb07827c3936cf1f131a0df8e391606c7446f00c5fb45c0b34436bdfd3",
+      "committed": true
+    },
+    "cells/P3_W1_C2.PNG": {
+      "percent": 18.554396423248882,
+      "threshold": 32,
+      "green_pixels": 747,
+      "total_pixels": 4026,
+      "width": 61,
+      "height": 66,
+      "bytes": 7585,
+      "sha256": "271d858138c0dcffd6dbda4225fc2d5e6c4a304c4a4e4f4fa3aaa6982dda2671",
+      "committed": true
+    },
+    "cells/P3_W1_C3.PNG": {
+      "percent": 5.3544494720965305,
+      "threshold": 72,
+      "green_pixels": 71,
+      "total_pixels": 1326,
+      "width": 34,
+      "height": 39,
+      "bytes": 5141,
+      "sha256": "66aa14b927398965fef3f49299022824192dd7d8584cf03d388f5187e554d8ff",
+      "committed": true
+    },
+    "cells/P3_W2_C1.PNG": {
+      "percent": 29.03364969801553,
+      "threshold": 23,
+      "green_pixels": 1346,
+      "total_pixels": 4636,
+      "width": 76,
+      "height": 61,
+      "bytes": 9567,
+      "sha256": "594830f58cdfd1ab4be9639f08cba99e48a9eaf1fb9cdc5b9ae40b4196aaaf3d",
+      "committed": true
+    },
+    "cells/P3_W2_C2.PNG": {
+      "percent": 18.02791123312743,
+      "threshold": 41,
+      "green_pixels": 1576,
+      "total_pixels": 8742,
+      "width": 93,
+      "height": 94,
+      "bytes": 14430,
+      "sha256": "5ef7eee9ce59b7a1c1ffaa0f155624539e646e158e949e8ac09973290776976c",
+      "committed": true
+    },
+    "cells/P3_W2_C3.PNG": {
+      "percent": 34.71202710333145,
+      "threshold": 29,
+      "green_pixels": 2459,
+      "total_pixels": 7084,
+      "width": 92,
+      "height": 77,
+      "bytes": 13628,
+      "sha256": "b787911f04610f335b40631695032d5b563a5bd3459cf8de47a37a75f525e041",
+      "committed": true
+    },
+    "cells/P3_W3_C1.PNG": {
+      "percent": 38.92931392931393,
+      "threshold": 44,
+      "green_pixels": 749,
+      "total_pixels": 1924,
+      "width": 37,
+      "height": 52,
+      "bytes": 6434,
+      "sha256": "b946d555bd469b8fea8d9bcb5edc649ba63e642bff5632d2a6bd601a7cd52289",
+      "committed": true
+    },
+    "cells/P3_W3_C2.PNG": {
+      "percent": 43.0137684854666,
+      "threshold": 45,
+      "green_pixels": 1687,
+      "total_pixels": 3922,
+      "width": 53,
+      "height": 74,
+      "bytes": 10143,
+      "sha256": "86ea712c3714f7bc43f686645342a5056ef6f6a302541ae174aff30c841758d1",
+      "committed": true
+    },
+    "cells/P3_W3_C3.PNG": {
+      "percent": 24.724871606749815,
+      "threshold": 26,
+      "green_pixels": 337,
+      "total_pixels": 1363,
+      "width": 29,
+      "height": 47,
+      "bytes": 5149,
+      "sha256": "fcf86ec23fc7752d60d9e77f09d3a2e407bbdffba4d2a87165759842ecb369c7",
+      "committed": true
+    },
+    "cells/P3_W4_C1.PNG": {
+      "percent": 21.295103092783503,
+      "threshold": 17,
+      "green_pixels": 1322,
+      "total_pixels": 6208,
+      "width": 64,
+      "height": 97,
+      "bytes": 10535,
+      "sha256": "3150c1e700a08ad1193f78a8d798e04f3c0d0b98614652ed0a6ba19e93761ab6",
+      "committed": true
+    },
+    "cells/P3_W4_C2.PNG": {
+      "percent": 28.65608465608466,
+      "threshold": 28,
+      "green_pixels": 1354,
+      "total_pixels": 4725,
+      "width": 75,
+      "height": 63,
+      "bytes": 9810,
+      "sha256": "d55906c5ee0e71d158b21e70de0ac0d435d6b3290274e280cdf63417a796e088",
+      "committed": true
+    },
+    "cells/P3_W4_C3.PNG": {
+      "percent": 49.94331065759637,
+      "threshold": 19,
+      "green_pixels": 1762,
+      "total_pixels": 3528,
+      "width": 56,
+      "height": 63,
+      "bytes": 8966,
+      "sha256": "76366b3667cb1a6734bff181e001eb18b44acbf9b74e6596521a5d9ca34fec3d",
+      "committed": true
+    },
+    "fullfield/Plate1_W1_green_channel_camera.jpeg": {
+      "percent": 0.0,
+      "threshold": 28,
+      "green_pixels": 0,
+      "total_pixels": 1392640,
+      "width": 1360,
+      "height": 1024,
+      "bytes": 627355,
+      "sha256": "883db10289b9907852ed67520563ebabbe6e9842b5d9970acd38b5d8462563cd",
+      "committed": true
+    },
+    "fullfield/Plate1_W1_untreated.png": {
+      "percent": 13.136217604128458,
+      "threshold": 24,
+      "green_pixels": 83085,
+      "total_pixels": 632488,
+      "width": 914,
+      "height": 692,
+      "bytes": 1067346,
+      "sha256": "e0b9736f9e0e0f957800c94bd8fa5a671565bfaa5bc8a91d9283928f6196112c",
+      "committed": true
+    },
+    "fullfield/Plate2_45_nocodazole45uM.png": {
+      "percent": 2.8790897017988653,
+      "threshold": 42,
+      "green_pixels": 9539,
+      "total_pixels": 331320,
+      "width": 660,
+      "height": 502,
+      "bytes": 608021,
+      "sha256": "17619a6941f7c1ff07db82dadb8d0fcd84916fca3cf64e6a01f0990a645c6d99",
+      "committed": true
+    },
+    "fullfield/Plate3_W2_New_nocodazole25uM.png": {
+      "percent": 3.914942416552801,
+      "threshold": 30,
+      "green_pixels": 22463,
+      "total_pixels": 573776,
+      "width": 872,
+      "height": 658,
+      "bytes": 912391,
+      "sha256": "b683e4642baf37928061160027aa878a8036a17b303c3182f76f838e7c0ee96d",
+      "committed": true
+    },
+    "edge/all-black.png": {
+      "percent": 0.0,
+      "threshold": 0,
+      "green_pixels": 0,
+      "total_pixels": 4096,
+      "width": 64,
+      "height": 64,
+      "bytes": 173,
+      "sha256": "d42b74f98e3517b563c158ac43d76b2f4994c08f961e5a10ae56dd1eacb5ae80",
+      "committed": true
+    },
+    "edge/all-blue-nucleus-only.png": {
+      "percent": 0.0,
+      "threshold": 0,
+      "green_pixels": 0,
+      "total_pixels": 4096,
+      "width": 64,
+      "height": 64,
+      "bytes": 221,
+      "sha256": "374f4b85b418b4600d3a9aa17868ce5e49aebaf2998d9d3b17d7d501d3dc8a81",
+      "committed": true
+    },
+    "edge/all-green.png": {
+      "percent": 100.0,
+      "threshold": 0,
+      "green_pixels": 4096,
+      "total_pixels": 4096,
+      "width": 64,
+      "height": 64,
+      "bytes": 214,
+      "sha256": "207101691dfd64f67723deddf3b155996c5f8c52e6da9dc40a2f61714fd7b3c3",
+      "committed": true
+    },
+    "edge/cell-16bit.png": {
+      "percent": 24.832064487236902,
+      "threshold": 36,
+      "green_pixels": 1109,
+      "total_pixels": 4466,
+      "width": 77,
+      "height": 58,
+      "bytes": 6733,
+      "sha256": "2f34d82d9a30c3808fb799db44aa771ea07977dcb259318a8546bf612fe54dec",
+      "committed": true
+    },
+    "edge/cell-grayscale.png": {
+      "percent": 0.0,
+      "threshold": 24,
+      "green_pixels": 0,
+      "total_pixels": 4466,
+      "width": 77,
+      "height": 58,
+      "bytes": 1385,
+      "sha256": "b95a5f58593ed6d690ec61288d2b09ed32a8e15de28bc62367279d3f5dfb6f7d",
+      "committed": true
+    },
+    "edge/cell-posterized.png": {
+      "percent": 21.786833855799372,
+      "threshold": 32,
+      "green_pixels": 973,
+      "total_pixels": 4466,
+      "width": 77,
+      "height": 58,
+      "bytes": 1389,
+      "sha256": "83116d3444c49a2f0f84c938315066481d7f6d2da069389157568764323bc894",
+      "committed": true
+    },
+    "edge/cell-q60.jpg": {
+      "percent": 23.891625615763548,
+      "threshold": 37,
+      "green_pixels": 1067,
+      "total_pixels": 4466,
+      "width": 77,
+      "height": 58,
+      "bytes": 1008,
+      "sha256": "f1903baa502efdcdab07d942993697f6692c40dfb568f216d00e139b5ec6a7aa",
+      "committed": true
+    },
+    "edge/cell-q95.jpg": {
+      "percent": 23.93640841916704,
+      "threshold": 37,
+      "green_pixels": 1069,
+      "total_pixels": 4466,
+      "width": 77,
+      "height": 58,
+      "bytes": 1848,
+      "sha256": "1835b7a193c1dd0d893b87347c6a131ab80d39e06c4bbeb3b9148e401655173f",
+      "committed": true
+    },
+    "edge/cell-rgb.png": {
+      "percent": 24.832064487236902,
+      "threshold": 36,
+      "green_pixels": 1109,
+      "total_pixels": 4466,
+      "width": 77,
+      "height": 58,
+      "bytes": 3623,
+      "sha256": "d695873a058530e96987778522057093b922defcc277c5904f7052223625ef60",
+      "committed": true
+    },
+    "edge/cell-rgba-transparent-border.png": {
+      "percent": 24.832064487236902,
+      "threshold": 36,
+      "green_pixels": 1109,
+      "total_pixels": 4466,
+      "width": 77,
+      "height": 58,
+      "bytes": 4955,
+      "sha256": "7b91dc82e11519fb7b29f4f1ec13b35294218fda09b6beb68f10b88a355c3f40",
+      "committed": true
+    },
+    "edge/cell.bmp": {
+      "percent": 24.832064487236902,
+      "threshold": 36,
+      "green_pixels": 1109,
+      "total_pixels": 4466,
+      "width": 77,
+      "height": 58,
+      "bytes": 13510,
+      "sha256": "08cc794f8f17b4d8f90f474d2c1677376186c465d00bef9d7a4a31c3eac78371",
+      "committed": true
+    },
+    "edge/cell.webp": {
+      "percent": 24.832064487236902,
+      "threshold": 36,
+      "green_pixels": 1109,
+      "total_pixels": 4466,
+      "width": 77,
+      "height": 58,
+      "bytes": 2984,
+      "sha256": "fdede242016019a5b80bf892b5cc444bc097ccd5dd65593deed0fc22a56e435a",
+      "committed": true
+    },
+    "edge/exif-rotated-orientation6.jpg": {
+      "percent": 23.981191222570533,
+      "threshold": 37,
+      "green_pixels": 3213,
+      "total_pixels": 13398,
+      "width": 58,
+      "height": 231,
+      "bytes": 4310,
+      "sha256": "6a0b998a0a2b00184887b3805c6f529d273622280384feeb114aff11d58eb71a",
+      "committed": true
+    },
+    "edge/huge-12mp-4000x3000.jpg": {
+      "percent": 23.672058333333336,
+      "threshold": 37,
+      "green_pixels": 2840647,
+      "total_pixels": 12000000,
+      "width": 4000,
+      "height": 3000,
+      "bytes": 1696733,
+      "sha256": "e0d10cd74660370dd3af6ea7bd48a5cdc8aa8226a25f22a956f8230a222eaa67",
+      "committed": true
+    },
+    "edge/huge-12mp-4000x3000.png": {
+      "percent": 24.7754,
+      "threshold": 36,
+      "green_pixels": 2973048,
+      "total_pixels": 12000000,
+      "width": 4000,
+      "height": 3000,
+      "bytes": 363867,
+      "sha256": "f411d79138383e8bf311613aaea1abba5717e03199d6d85e3ce13258f46ae602",
+      "committed": true
+    },
+    "edge/one-pixel.png": {
+      "percent": 100.0,
+      "threshold": 0,
+      "green_pixels": 1,
+      "total_pixels": 1,
+      "width": 1,
+      "height": 1,
+      "bytes": 69,
+      "sha256": "103320438989d29dde3a041fa943dcd4728da7660e8fd8c21938670e89aba71e",
+      "committed": true
+    },
+    "edge/tall-100x2000.png": {
+      "percent": 23.615,
+      "threshold": 36,
+      "green_pixels": 47230,
+      "total_pixels": 200000,
+      "width": 100,
+      "height": 2000,
+      "bytes": 149120,
+      "sha256": "f406fb7d286bc09b478236e958781e873e3bd28ed9f0d98ddc6cfa9106431fa5",
+      "committed": true
+    },
+    "edge/tiny-4x4.png": {
+      "percent": 0.0,
+      "threshold": 19,
+      "green_pixels": 0,
+      "total_pixels": 16,
+      "width": 4,
+      "height": 4,
+      "bytes": 100,
+      "sha256": "42e6cb3a40f7855582432c0b86843a2d3c0bd70510746fc648367b4bbd94dd6f",
+      "committed": true
+    },
+    "edge/wide-2000x100.png": {
+      "percent": 25.316,
+      "threshold": 37,
+      "green_pixels": 50632,
+      "total_pixels": 200000,
+      "width": 2000,
+      "height": 100,
+      "bytes": 154896,
+      "sha256": "7f8413675e9345dbe657244fe948ec82cccccb9556c8484bd0513f4c12e8f2e5",
+      "committed": true
+    },
+    "edge/generated-large/huge-24mp-6000x4000.jpg": {
+      "percent": 23.929191666666664,
+      "threshold": 37,
+      "green_pixels": 5743006,
+      "total_pixels": 24000000,
+      "width": 6000,
+      "height": 4000,
+      "bytes": 4309465,
+      "sha256": "ea8e7e8f9b6ab36bfcc36c8c721248daf2dae1187c319c51222b7847e7590722",
+      "committed": false
+    }
+  },
+  "non_images": {
+    "edge/cell.tiff": {
+      "expect": "refused in Chrome/Firefox (no TIFF decoder): message must name the supported types; Safari may decode it and then must match python",
+      "bytes": 4732,
+      "sha256": "4ce07ddbf4eaa808e4705cf48d832e8e1c4fd93813546d162e8622bb33c0e4e0"
+    },
+    "edge/document.pdf": {
+      "expect": "refused: PDF is not an image",
+      "bytes": 69,
+      "sha256": "cfa3181c1ee36e8bce5e39f84959f4558ea7ba32c0e4539a8ab3c8ce8c716ec6"
+    },
+    "edge/empty.png": {
+      "expect": "refused: empty file",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "edge/not-an-image.txt": {
+      "expect": "refused: not an image (plain text)",
+      "bytes": 35,
+      "sha256": "c896169cb40966dfad5eab95600c8bf8c9f3cc3894de014fb5706dd756e9188d"
+    },
+    "edge/renamed-text.png": {
+      "expect": "refused: .png extension but not image bytes",
+      "bytes": 38,
+      "sha256": "dab74c85bd2e19ec042e0aa33e89d087546c92a4a326fd2ed098fe0a786bb8cc"
+    },
+    "edge/truncated.png": {
+      "expect": "refused: corrupt/truncated PNG",
+      "bytes": 600,
+      "sha256": "903078018b07fbbe91b24ec07c760d369448a627364876c8b4aa11a073a7155c"
+    }
+  }
+}

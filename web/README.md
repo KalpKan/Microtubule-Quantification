@@ -33,6 +33,8 @@ P3_W2_C3	python 34.7120%	js 34.7120%	diff 0.0000
 
 The Python numbers also equal the values published in `../Results/quantification_results.csv` for the same cells, which shows the recovered samples are the original crops (see below).
 
+Beyond the three samples, `tests/corpus.test.ts` runs every PNG in `../tests/fixtures/` (the 36 original crops, whole-well images and generated edge cases, 52 files, Python truth in `../tests/fixtures/ground_truth.json`) and passes with `diff 0.0000` on all of them; `scripts/browser-corpus.js` does the same in a real browser for JPEG/WebP/BMP/EXIF and the wrong-file-type cases.
+
 `tests/pipeline.test.ts` is the automated version of this table: it loads the very same `public/opencv.js` the page ships, decodes each sample PNG with `pngjs`, runs `src/pipeline.ts`, and fails if any percentage drifts by more than 1 point or the threshold or pixel counts change.
 
 ### Where the sample cells come from
