@@ -78,3 +78,8 @@ REPOSITORY_DESCRIPTION.txt
 
 # local virtualenv for the reference pipeline
 .venv/
+
+# Vercel CLI link + local env (never commit); .env.example stays tracked
+.vercel
+.env.local
+.env*.local
