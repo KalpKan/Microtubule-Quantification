@@ -75,3 +75,6 @@ push_updates.sh
 STATISTICS_README.txt
 PROJECT_SUMMARY.txt
 REPOSITORY_DESCRIPTION.txt
+
+# local virtualenv for the reference pipeline
+.venv/

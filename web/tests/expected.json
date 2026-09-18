@@ -1,0 +1,26 @@
+{
+  "P1_W1_C1": {
+    "percent": 24.832064487236902,
+    "threshold": 36,
+    "width": 77,
+    "height": 58,
+    "green_pixels": 1109,
+    "total_pixels": 4466
+  },
+  "P1_W3_C1": {
+    "percent": 21.182728410513143,
+    "threshold": 62,
+    "width": 68,
+    "height": 47,
+    "green_pixels": 677,
+    "total_pixels": 3196
+  },
+  "P3_W2_C3": {
+    "percent": 34.71202710333145,
+    "threshold": 29,
+    "width": 92,
+    "height": 77,
+    "green_pixels": 2459,
+    "total_pixels": 7084
+  }
+}
