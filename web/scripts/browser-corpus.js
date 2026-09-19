@@ -10,8 +10,9 @@
  *   4. open http://localhost:8792/ in Chrome, wait for "Ready", paste this file into the console, then run e.g.
  *        await runCorpus(["cells/P3_W4_C3.PNG", "edge/cell-q95.jpg", "edge/not-an-image.txt"])
  *      or  await runCorpus(await corpusList())   // every entry in ground_truth.json
- *   Each row: file | browser % | python % | diff | threshold | size | analysis ms | status line.
+ *   Each row: file | browser % | python % | diff | threshold | size | warning | status line.
  *   Expected: |diff| <= 1 for every image; a clear, specific refusal for every non-image.
+ *   The scripted version of this (Chromium + WebKit, with assertions) is scripts/browser-check.cjs (`npm run test:browser`).
  * The page must be served from the same origin as /fixtures/ (a https page cannot fetch localhost).
  */
 window.corpusList = async function () {
@@ -37,12 +38,13 @@ window.runCorpus = async function (files) {
     for (let i = 0; i < 2400; i++) {
       await new Promise((r) => setTimeout(r, 25));
       st = status.textContent;
-      if (/^Done|^Could not|^OpenCV failed|^Refused|^That file/.test(st)) break;
+      if (/^Done|^Could not|^OpenCV failed|could not be read|megapixels/.test(st)) break;
     }
     const ref = gt.images[f];
     const got = st.startsWith("Done") ? Number(document.getElementById("percent").textContent) : null;
     const diff = ref && got !== null ? (got - ref.percent).toFixed(3) : "-";
-    rows.push([f, got ?? "-", ref ? ref.percent.toFixed(4) : "(non-image)", diff, document.getElementById("threshold").textContent, document.getElementById("dims").textContent, document.getElementById("elapsed").textContent, st.slice(0, 100)].join(" | "));
+    const warn = document.getElementById("warnings");
+    rows.push([f, got ?? "-", ref ? ref.percent.toFixed(4) : "(non-image)", diff, document.getElementById("threshold").textContent, document.getElementById("dims").textContent, warn && !warn.hidden ? "WARN" : "", st.slice(0, 100)].join(" | "));
   }
   console.log(rows.join("\n"));
   return rows;

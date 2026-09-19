@@ -13,7 +13,7 @@ An automated image analysis pipeline for quantifying microtubule content in fluo
 
 This tool automatically:
 1. **Analyzes** fluorescent cell images (green = microtubules, blue = nuclei)
-2. **Quantifies** the percentage of each cell occupied by microtubules
+2. **Quantifies** the percentage of each image (the cropped cell plus its background, nucleus excluded) occupied by microtubules
 3. **Excludes** the nucleus from measurements
 4. **Generates** dose-response curves with statistics
 5. **Creates** publication-quality figures for posters and papers
@@ -69,7 +69,7 @@ See **[GETTING_STARTED.md](GETTING_STARTED.md)** for detailed instructions.
 **1. Cell Images**
 - Cropped individual cells (one cell per image)
 - Fluorescent microscopy: green channel (microtubules), blue channel (nuclei)
-- Formats: PNG, JPG, or TIFF
+- Formats: PNG, JPG, or TIFF (the browser version at microtubules.kalpkan.com reads PNG, JPEG, WebP, BMP and GIF; convert TIFF/HEIC to PNG for it)
 
 **2. Metadata File (metadata.csv)**
 ```csv

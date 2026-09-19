@@ -17,10 +17,8 @@
         <p class="eyebrow">Image analysis, in the browser</p>
         <h1>Microtubule Quantifier</h1>
         <p class="lede">
-          Upload a fluorescent cell image (green = microtubules, blue = nucleus) and get the percentage of the
-          image occupied by microtubules, using the same OpenCV steps as the
-          <a href="https://github.com/KalpKan/Microtubule-Quantification">Python pipeline</a>. Nothing is uploaded:
-          the picture never leaves your device.
+          Pick a fluorescent cell image (green = microtubules, blue = nucleus) and get the share of the picture that is
+          microtubule. Nothing is uploaded: the picture never leaves your device.
         </p>
       </header>
 
@@ -28,7 +26,11 @@
         <h2 id="controls-heading" class="visually-hidden">Choose an image</h2>
         <div class="buttons">
           <label class="button primary">
-            <input id="file-input" type="file" accept="image/*" />
+            <input
+              id="file-input"
+              type="file"
+              accept="image/png,image/jpeg,image/webp,image/bmp,image/gif,.png,.jpg,.jpeg,.webp,.bmp,.gif"
+            />
             Choose an image
           </label>
           <label class="button">
@@ -36,6 +38,7 @@
             Take a photo
           </label>
         </div>
+        <p id="mp-limit" class="hint">PNG, JPEG, WebP, BMP or GIF, up to 30 megapixels. TIFF or HEIC: convert to PNG first.</p>
         <p class="samples-label">Or try a sample cell from the paper:</p>
         <div class="buttons samples" id="samples">
           <button type="button" class="button sample" data-sample="P1_W1_C1">Untreated</button>
@@ -45,17 +48,39 @@
         <p id="status" class="status" role="status" aria-live="polite">Loading OpenCV...</p>
       </section>
 
-      <section class="results" id="results" hidden aria-labelledby="results-heading">
+      <section class="results" id="results" hidden aria-labelledby="results-heading" tabindex="-1">
         <h2 id="results-heading" class="visually-hidden">Result</h2>
+        <div id="warnings" class="warnings" role="alert" hidden></div>
         <div class="readout">
           <p class="percent"><span id="percent">0.00</span><span class="unit">%</span></p>
           <p class="readout-label">of the image is microtubule</p>
+          <p class="definition">
+            Share of all pixels counted as microtubule after the nucleus is removed. Background is in the denominator,
+            so a tighter crop around the cell gives a higher number.
+          </p>
           <dl class="details">
             <div><dt>Image</dt><dd id="dims">0 × 0 px</dd></div>
             <div><dt>Otsu threshold</dt><dd id="threshold">0</dd></div>
             <div><dt>Microtubule pixels</dt><dd id="pixels">0 / 0</dd></div>
-            <div><dt>Time</dt><dd id="elapsed">0 ms</dd></div>
+            <div><dt>Nucleus removed</dt><dd id="nucleus">0 %</dd></div>
           </dl>
+          <details class="explain" id="explain">
+            <summary>What these numbers mean</summary>
+            <dl>
+              <div><dt>Image</dt><dd>Width × height; all of these pixels are the denominator.</dd></div>
+              <div>
+                <dt>Otsu threshold</dt>
+                <dd>Green brightness (0–255) above which a pixel counts as microtubule, chosen automatically from the image's own histogram.</dd>
+              </div>
+              <div><dt>Microtubule pixels</dt><dd>Pixels above the threshold with the nucleus removed and a small clean-up, over all pixels.</dd></div>
+              <div><dt>Nucleus removed</dt><dd>Share of the picture masked out as nucleus (blue) before counting.</dd></div>
+            </dl>
+          </details>
+          <div class="actions">
+            <button type="button" class="button small" id="download-overlay">Download overlay</button>
+            <button type="button" class="button small" id="download-mask">Download mask</button>
+            <button type="button" class="button small" id="copy-result">Copy result</button>
+          </div>
         </div>
         <div class="panels">
           <figure>
@@ -66,6 +91,16 @@
             <canvas id="overlay-canvas" width="1" height="1"></canvas>
             <figcaption>Detected microtubules (green), nucleus excluded</figcaption>
           </figure>
+        </div>
+        <div class="reference">
+          <h3>Is that high or low?</h3>
+          <p>
+            In the group's own experiment (single cells cropped from the same microscope, same exposure), untreated
+            cells measured <strong>27.9 ± 4.6 %</strong>, cells treated with nocodazole 45 µM
+            <strong>17.2 ± 2.6 %</strong>, and taxol-treated cells <strong>30.7 ± 9.5 %</strong>. Those numbers only
+            apply to pictures taken the same way: brightness, exposure, magnification and how tightly the cell is
+            cropped all move the number, so compare images within one experiment rather than against this table.
+          </p>
         </div>
       </section>
 
@@ -80,8 +115,13 @@
           <li>Percentage = microtubule pixels ÷ all pixels × 100.</li>
         </ol>
         <p>
-          On the three sample cells the browser result equals the Python script's result to four decimal places
-          (see the <a href="https://github.com/KalpKan/Microtubule-Quantification/tree/main/web#accuracy">accuracy table</a>).
+          These are the same OpenCV steps as the
+          <a href="https://github.com/KalpKan/Microtubule-Quantification">Python pipeline</a>, run by OpenCV.js in a
+          background thread of your browser. On the three sample cells the browser result equals the Python script's
+          result to four decimal places, and on a 60-image test set every picture matches within 0.01 point (see the
+          <a href="https://github.com/KalpKan/Microtubule-Quantification/tree/main/web#accuracy">accuracy table</a>).
+          Colour profiles embedded in PNG/JPEG files are ignored, exactly as the Python script ignores them, so Safari
+          and Chrome give the same number.
         </p>
       </section>
 
