@@ -10,6 +10,7 @@
  *   BROWSERS=webkit npm run test:browser # one engine
  *   ONLY=corpus,files,huge,downloads,phone,bands npm run test:browser
  *   OUT=/path/report.json                # also write every row as JSON
+ *   BASE=https://microtubules.kalpkan.com/ # run against the live site instead of dist/
  *
  * It serves dist/ plus ../tests/fixtures on a local port itself. Browsers come
  * from Playwright's cache (`npx playwright install chromium webkit` once).
@@ -262,7 +263,8 @@ async function phone(browser, engine, base) {
 }
 
 (async () => {
-  const { server, base } = await serve();
+  // BASE=https://microtubules.kalpkan.com/ runs the same checks against the live site (fixtures are still local files).
+  const { server, base } = process.env.BASE ? { server: { close() {} }, base: process.env.BASE } : await serve();
   for (const engine of BROWSERS) {
     const browserType = engine === "webkit" ? webkit : chromium;
     const browser = await browserType.launch({ headless: true, args: engine === "chromium" ? ["--enable-precise-memory-info"] : [] });
